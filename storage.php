@@ -190,3 +190,19 @@ echo "restart clicked";
 
 
 
+
+//TIMER http://jsfiddle.net/uL50cqmw/
+var countdown;
+var counter = function(){
+var time = parseInt($('#time').text());
+if (time !== 0){
+$('#time').text(time - 1);
+}else{
+clearInterval(countdown);
+}
+}
+countdown = setInterval(counter , 1000);
+
+
+
+

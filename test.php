@@ -24,7 +24,9 @@ class Snake {
     }
 
     public function build_grid()
+
     {
+
         $color = "background-color:lightblue;";
         $snake = "background-color:red;";
         for ($row = 1; $row <= 10; $row++) {
@@ -39,5 +41,7 @@ class Snake {
     }
 
 }
+
+
 ?>
 
