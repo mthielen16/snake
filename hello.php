@@ -33,8 +33,12 @@ session_start();
 require "test.php";
 $obj = new Snake;
 
-    $_SESSION['row']= 5;
-    $_SESSION['col']= 5;
+    if (!isset($_SESSION['row'])) {
+        $_SESSION['row']= 5;
+    }
+    if (!isset($_SESSION['col'])) {
+        $_SESSION['col']= 5;
+    }
 
     echo $obj->get_buttons();
         //check clicked button
@@ -42,22 +46,22 @@ $obj = new Snake;
         if(isset($_POST['btn_1']))
         {
             echo "left clicked";
-            $_SESSION['row']-=1;
+            $_SESSION['row']--;
         }
         if(isset($_POST['btn_2']))
         {
             echo "right clicked";
-            $_SESSION['row']+=1;
+            $_SESSION['row']++;
         }
         if(isset($_POST['btn_3']))
         {
             echo "up clicked";
-            $_SESSION['col']-=1;
+            $_SESSION['col']--;
         }
         if(isset($_POST['btn_4']))
         {
             echo "down clicked";
-            $_SESSION['col']+=1;
+            $_SESSION['col']++;
         }
         if(isset($_POST['btn_5']))
         {
